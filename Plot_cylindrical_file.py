@@ -64,7 +64,7 @@ def plotting_vector_field(Averaged_data_frame, AU_TO_CM, Resolution_L, force_typ
 
     # Add color bar
     cbar = plt.colorbar(quiver)
-    cbar.set_label(r'$\log_{10}$ Net force field (Dyne/cm^3)')
+    cbar.set_label(r'$\log_{10}$ vector field (Dyne/cm^3)')
     cbar.mappable.set_clim(vmin, vmax)
     ###### Plotting the first figure
     fig_1 = plt.figure(1)
@@ -85,7 +85,7 @@ def plotting_vector_field(Averaged_data_frame, AU_TO_CM, Resolution_L, force_typ
                         function_magnitude_log[::step], cmap='plasma',
                         scale=50, width=0.002, headwidth=3)
     cbar = plt.colorbar(quiver)
-    cbar.set_label(r'$\log_{10}$ Net force field (Dyne/cm^3)')
+    cbar.set_label(r'$\log_{10}$ vector field (Dyne/cm^3)')
     plt.xlabel(r'$r$ (AU)')
     plt.ylabel(r'$z$ (AU)')
     plt.title(force_type + ' (Log Color Scale)_L_' + str(Resolution_L))
