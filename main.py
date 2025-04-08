@@ -234,6 +234,5 @@ Averaged_df = Averaged_data_frame
 #Plotting the function.
 # To have good visualization, we need to transfer the r and z to AU, and take scale the forces by their magnitude
 
-Plotting_variables = plotting_vector_field(Averaged_df, AU_TO_CM, Resolution)
+Plotting_variables = plotting_vector_field(Averaged_df, AU_TO_CM, Resolution, 'Net force')
 fig1, fig2 = Plotting_variables  # Now both figures are stored
-
