@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-def plotting_vector_field(Averaged_data_frame, AU_TO_CM, Resolution_L):
+def plotting_vector_field(Averaged_data_frame, AU_TO_CM, Resolution_L, force_type):
     # Extract arrays for plotting. Transferring the padnas data frame to numpy arrays
     R_list = Averaged_data_frame['r'].values
     Z_list = Averaged_data_frame['z'].values
@@ -72,7 +72,7 @@ def plotting_vector_field(Averaged_data_frame, AU_TO_CM, Resolution_L):
     # Labels and title
     plt.xlabel(r'$r$ (AU)')
     plt.ylabel(r'$z$ (AU)')
-    plt.title('rho and density gradient (Log Color Scale)_L_' + str(Resolution_L))
+    plt.title(force_type + ' (Log Color Scale)_L_' + str(Resolution_L))
     plt.show()    # Show the plot
     ###### Plotting the next figure
     fig_2 = plt.figure(2)
@@ -85,9 +85,9 @@ def plotting_vector_field(Averaged_data_frame, AU_TO_CM, Resolution_L):
                         function_magnitude_log[::step], cmap='plasma',
                         scale=50, width=0.002, headwidth=3)
     cbar = plt.colorbar(quiver)
-    cbar.set_label(r'$\log_{10}$ Pressure Gradient Field (Dyne/cm^3)')
+    cbar.set_label(r'$\log_{10}$ Net force field (Dyne/cm^3)')
     plt.xlabel(r'$r$ (AU)')
     plt.ylabel(r'$z$ (AU)')
-    plt.title('rho and density gradient (Log Color Scale)_L_' + str(Resolution_L))
+    plt.title(force_type + ' (Log Color Scale)_L_' + str(Resolution_L))
     plt.show() # show the plot
     return fig_1, fig_2
